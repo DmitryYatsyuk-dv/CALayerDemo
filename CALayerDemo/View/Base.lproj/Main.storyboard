@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CALayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="CALayerDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,7 +18,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bunnySweater" translatesAutoresizingMaskIntoConstraints="NO" id="RO6-Pw-Ayl">
                                 <rect key="frame" x="30" y="61" width="355" height="492"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="nil" keyPath=""/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4zd-At-uHn">
@@ -27,7 +27,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Where are all my friends?">
+                                        <fragment content="Where is everyone?">
                                             <attributes>
                                                 <font key="NSFont" size="32" name="BradleyHandITCTT-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -41,7 +41,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="uTb-TH-NLI" kind="presentation" modalTransitionStyle="crossDissolve" id="2BT-2N-3MM"/>
+                                    <action selector="questionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJo-k4-eoL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,9 +58,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Gxq-Ou-Ghg"/>
                     <connections>
                         <outlet property="button" destination="4zd-At-uHn" id="06v-Ju-9JV"/>
                         <outlet property="imageView" destination="RO6-Pw-Ayl" id="Ugt-Q0-OmF"/>
+                        <segue destination="HIn-2Z-TR1" kind="show" identifier="showSecondScreen" id="cAd-86-qrC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -68,38 +70,28 @@
             <point key="canvasLocation" x="-91.304347826086968" y="99.776785714285708"/>
         </scene>
         <!--Second View Controller-->
-        <scene sceneID="amz-mY-7Xw">
+        <scene sceneID="EkU-Ec-2cv">
             <objects>
-                <viewController id="uTb-TH-NLI" customClass="SecondViewController" customModule="CALayerDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AUT-mz-Tgq">
+                <viewController storyboardIdentifier="ThirdViewController" id="HIn-2Z-TR1" customClass="SecondViewController" customModule="CALayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gTm-jN-Sfd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foxesSleeping" translatesAutoresizingMaskIntoConstraints="NO" id="gnD-Vn-IlC">
-                                <rect key="frame" x="20" y="20" width="250" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penguinSleep" translatesAutoresizingMaskIntoConstraints="NO" id="cip-7Q-pT8">
+                                <rect key="frame" x="57" y="271" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="nAR-FG-3Nt"/>
+                                    <constraint firstAttribute="width" constant="300" id="8RU-2O-Scb"/>
+                                    <constraint firstAttribute="height" constant="300" id="dux-wS-OgI"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="nil" keyPath=""/>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elephantSlepping" translatesAutoresizingMaskIntoConstraints="NO" id="rKX-iC-PLo">
-                                <rect key="frame" x="106" y="228" width="290" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="bNt-bX-vWM"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="nil" keyPath=""/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-jo-fi1">
-                                <rect key="frame" x="69" y="533" width="124" height="71"/>
-                                <color key="backgroundColor" red="0.57672101259231567" green="0.69373691082000732" blue="0.73997795581817627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-jo-fi1">
+                                <rect key="frame" x="57" y="645" width="124" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1320765920490469" green="0.25997278627441811" blue="0.32937032665092936" alpha="0.3379708904109589" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Zzz..">
+                                        <fragment content="heey !">
                                             <attributes>
                                                 <font key="NSFont" size="40" name="BradleyHandITCTT-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -111,71 +103,23 @@
                                     <userDefinedRuntimeAttribute type="nil" keyPath=""/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="HIn-2Z-TR1" kind="presentation" identifier="thirdVC" modalPresentationStyle="automatic" modalTransitionStyle="coverVertical" id="Kcj-KR-vnJ"/>
+                                    <action selector="Tapped:" destination="HIn-2Z-TR1" eventType="touchUpInside" id="efI-oC-JWo"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.10978672653436661" green="0.2071586549282074" blue="0.25726130604743958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="rKX-iC-PLo" firstAttribute="top" secondItem="gnD-Vn-IlC" secondAttribute="bottom" constant="8" id="5du-TQ-WVk"/>
-                            <constraint firstItem="aKQ-jo-fi1" firstAttribute="leading" secondItem="odc-4F-4tj" secondAttribute="leading" constant="69" id="EYq-XL-vvj"/>
-                            <constraint firstItem="odc-4F-4tj" firstAttribute="trailing" secondItem="aKQ-jo-fi1" secondAttribute="trailing" constant="221" id="JhO-VI-lfg"/>
-                            <constraint firstItem="gnD-Vn-IlC" firstAttribute="leading" secondItem="odc-4F-4tj" secondAttribute="leading" constant="20" id="P4t-is-GWF"/>
-                            <constraint firstItem="gnD-Vn-IlC" firstAttribute="top" secondItem="odc-4F-4tj" secondAttribute="top" constant="20" id="aam-kT-lPj"/>
-                            <constraint firstItem="odc-4F-4tj" firstAttribute="trailing" secondItem="gnD-Vn-IlC" secondAttribute="trailing" constant="144" id="d6Z-l4-uXD"/>
-                            <constraint firstItem="aKQ-jo-fi1" firstAttribute="top" secondItem="rKX-iC-PLo" secondAttribute="bottom" constant="65" id="deg-4U-Bgi"/>
-                            <constraint firstItem="odc-4F-4tj" firstAttribute="bottom" secondItem="aKQ-jo-fi1" secondAttribute="bottom" constant="204" id="lXD-kJ-o9r"/>
-                            <constraint firstItem="odc-4F-4tj" firstAttribute="trailing" secondItem="rKX-iC-PLo" secondAttribute="trailing" constant="18" id="r8U-X9-7bz"/>
-                            <constraint firstItem="rKX-iC-PLo" firstAttribute="leading" secondItem="odc-4F-4tj" secondAttribute="leading" constant="106" id="zWu-C4-IS0"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="odc-4F-4tj"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="FiE-Vh-M30"/>
-                    <connections>
-                        <outlet property="button" destination="aKQ-jo-fi1" id="JJF-k6-pBb"/>
-                        <outlet property="imageView" destination="gnD-Vn-IlC" id="XaR-D6-A20"/>
-                        <outlet property="imageViewSecond" destination="rKX-iC-PLo" id="eWq-Ad-zBH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xgX-zz-eUQ" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="666.66666666666674" y="99.776785714285708"/>
-        </scene>
-        <!--Third View Controller-->
-        <scene sceneID="EkU-Ec-2cv">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bG1-a8-SXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="ThirdViewController" id="HIn-2Z-TR1" customClass="ThirdViewController" customModule="CALayerDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gTm-jN-Sfd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penguinSleep" translatesAutoresizingMaskIntoConstraints="NO" id="cip-7Q-pT8">
-                                <rect key="frame" x="57" y="271" width="300" height="300.00000000000023"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="8RU-2O-Scb"/>
-                                    <constraint firstAttribute="height" constant="300" id="dux-wS-OgI"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePg-x2-6rY">
-                                <rect key="frame" x="260" y="286" width="84" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.57672101259999997" green="0.6937369108" blue="0.73997795580000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="I`m here!  Bunny">
-                                        <attributes>
-                                            <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" metaFont="system" size="30"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I`m here!  Bunny" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAp-W3-4FL">
+                                <rect key="frame" x="299" y="238" width="80" height="78"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.72306841611862183" green="0.80374592542648315" blue="0.83320432901382446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cip-7Q-pT8" firstAttribute="centerX" secondItem="gTm-jN-Sfd" secondAttribute="centerX" id="3Ew-0i-huG"/>
+                            <constraint firstItem="Sis-KB-CP5" firstAttribute="trailing" secondItem="SAp-W3-4FL" secondAttribute="trailing" constant="35" id="EXB-KI-Kjx"/>
+                            <constraint firstItem="SAp-W3-4FL" firstAttribute="top" secondItem="Sis-KB-CP5" secondAttribute="top" constant="238" id="VYB-Fv-NnN"/>
+                            <constraint firstItem="Sis-KB-CP5" firstAttribute="bottom" secondItem="SAp-W3-4FL" secondAttribute="bottom" constant="492" id="gqB-UV-oDN"/>
+                            <constraint firstItem="SAp-W3-4FL" firstAttribute="leading" secondItem="Sis-KB-CP5" secondAttribute="leading" constant="299" id="hso-a7-eUr"/>
                             <constraint firstItem="cip-7Q-pT8" firstAttribute="centerY" secondItem="gTm-jN-Sfd" secondAttribute="centerY" id="wRn-gc-hXA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sis-KB-CP5"/>
@@ -183,17 +127,16 @@
                     <navigationItem key="navigationItem" id="Ipu-Wa-YIv"/>
                     <connections>
                         <outlet property="imageView" destination="cip-7Q-pT8" id="o5b-8Q-hPW"/>
-                        <outlet property="textField" destination="ePg-x2-6rY" id="xXA-xc-mhg"/>
+                        <outlet property="label" destination="SAp-W3-4FL" id="IyW-CP-fMY"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bG1-a8-SXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1405.7971014492755" y="99.776785714285708"/>
+            <point key="canvasLocation" x="657.97101449275362" y="99.776785714285708"/>
         </scene>
     </scenes>
     <resources>
         <image name="bunnySweater" width="626" height="813"/>
-        <image name="elephantSlepping" width="626" height="626"/>
-        <image name="foxesSleeping" width="626" height="626"/>
         <image name="penguinSleep" width="626" height="841"/>
     </resources>
 </document>
